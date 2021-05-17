@@ -1,0 +1,81 @@
+
+1. From your analysis of the categorical variables from the dataset, what could you infer about their effect on the dependent variable? (3 marks) 
+Ans – Mentioned below are the insights:
+•	Bikes rented are more on Saturday and Friday.
+•	Bikes rented are more on working days.
+•	Bike rental counts have a positive relationship with temperature and atemp, thus they rise when the temperature rises and vice versa.
+•	Bike rental numbers have a negative relationship with humidity, therefore they are lower during high humidity levels and vice versa.
+•	Bikes rented are more in the month of Sep 2019.
+	
+2. Why is it important to use drop_first=True during dummy variable creation? (2 mark) 
+Ans – “Drop_first=True“ is important to use, as it helps in reducing the extra column created during dummy variable creation. Hence it reduces the correlations created among dummy variables.
+
+3. Looking at the pair-plot among the numerical variables, which one has the highest correlation with the target variable? (1 mark) 
+Ans - Bike rental counts show a positive correlation with temp and atemp and therefore bike rental counts increase at higher temperatures and vice-versa.
+
+4. How did you validate the assumptions of Linear Regression after building the model on the training set? (3 marks) 
+Ans – Mentioned below are the assumptions:
+•	Plotting the histogram of the error terms
+•	Drawing the distribution of residuals against levels of the dependent variable. One can use a QQ-plot and measure the divergence of the residuals from a normal distribution.
+
+5. Based on the final model, which are the top 3 features contributing significantly towards explaining the demand of the shared bikes? (2 marks) 
+Ans – The top 3 features contributing significantly towards explaining the demand of the shared bikes are mentioned as follows:
+•	Temperature
+•	year_2019
+•	weather_light rain or snow
+
+
+
+
+
+
+General Subjective Questions 
+
+1. Explain the linear regression algorithm in detail. (4 marks) 
+Ans - Linear Regression is a supervised machine learning algorithm where the predicted output is continuous and has a constant slope. It's used to predict values within a continuous range, (e.g. sales, price) rather than trying to classify them into categories (e.g. cat, dog).It carries out a regression job. Based on independent variables, regression models a goal prediction value. It is mostly used in predicting and determining the link between variables. Linear regression is used to predict the value of a dependent variable (y) based on the value of an independent variable (x). As a result of this regression methodology, a linear connection between x (input) and y (output) is discovered (output). As a result, the term Linear Regression was coined. Linear regression makes predictions for continuous/real or numeric variables such as sales, salary, age, product price, etc.
+
+While training the model we are given:
+x: input training data (univariate – one input variable(parameter))
+y: labels to data (supervised learning)
+When training the model – it fits the best line to predict the value of y for a given value of x. The model gets the best regression fit line by finding the best θ1 and θ2 values.
+θ1: intercept
+θ2: coefficient of x
+
+2. Explain the Anscombe’s quartet in detail. (3 marks) 
+Ans – Anscombe’s can be defined as a set of four data sets that are virtually equal in terms of simple descriptive statistics, however the dataset has certain anomalies that trick the regression model if formed. When displayed on scatter plots, they have extremely distinct distributions and appear differently.
+Francis Anscombe, a statistician, built it in 1973 to demonstrate the significance of plotting graphs before analysing and modelling, as well as the impact of additional data on statistical features. There are four data set plots with virtually identical statistical observations and statistical information, including variance and mean of all x,y points in each 4 datasets.
+
+3. What is Pearson’s R? (3 marks) 
+Ans - In statistics Pearson's R is a measure of linear correlation between two sets of data. It is the covariance of two variables, divided by the product of their standard deviations; thus it is essentially a normalized measurement of the covariance, such that the result always has a value between −1 and 1. As with covariance itself, the measure can only reflect a linear correlation of variables, and ignores many other types of relationship or correlation. As a simple example, one would expect the age and height of a sample of teenagers from a high school to have a Pearson correlation coefficient significantly greater than 0, but less than 1 (as 1 would represent an unrealistically perfect correlation).
+
+4. What is scaling? Why is scaling performed? What is the difference between normalized scaling and standardized scaling? (3 marks) 
+Ans - 
+It is a step of data Pre-Processing which is applied to independent variables to normalize the data within a particular range. It also helps in speeding up the calculations in an algorithm.
+Most of the times, collected data set contains features highly varying in magnitudes, units and range. If scaling is not done then algorithm only takes magnitude in account and not units hence incorrect modelling. To solve this issue, we have to do scaling to bring all the variables to the same level of magnitude. It is important to note that scaling just affects the coefficients and none of the other parameters like t-statistic, F-statistic, p-values, R-squared, etc.
+
+Normalization/Min-Max Scaling:
+It brings all of the data in the range of 0 and 1. sklearn.preprocessing.MinMaxScaler helps to implement normalization in python.
+ 
+
+Standardization Scaling:
+Standardization replaces the values by their Z scores. It brings all of the data into a standard normal distribution which has mean (μ) zero and standard deviation one (σ).
+ 
+
+
+5. You might have observed that sometimes the value of VIF is infinite. Why does this happen? (3 marks) 
+Ans - VIF is a metric that indicates how much collinearity raises the variance of an estimated regression coefficient. We fitted a regression model between the independent variables to determine VIF.
+The presence of a correlation between the variables is indicated by a high value of VIF. When the VIF is 4, it signifies that multi collinearity has inflated the variance of the model coefficient by a factor of four. This implies that the coefficient's standard error is exaggerated by a factor of two (square root of variance is the standard deviation).
+A high VIF score indicates the presence of a correlation between the variables. When the VIF is 4, it means that multi collinearity has inflated the model coefficient's variance by a factor of four. This means that the standard error of the coefficient has been increased by a factor of two (square root of variance is the standard deviation).
+
+6. What is a Q-Q plot? Explain the use and importance of a Q-Q plot in linear regression. (3 marks)
+Ans - The Quantile-Quantile (Q-Q) plot is a graphical tool that may be used to determine if a collection of data is likely to have come from a theoretical distribution such as a Normal, exponential, or uniform distribution. It also aids in determining whether two data sets are from populations with similar distributions.
+A few advantages: 
+•	It may be used with sample sizes of any size
+•	It can identify several distributional features such as shifts in location, shifts in scale, changes in symmetry, and the existence of outliers.
+It's used to see if the following scenarios are true:
+If two data sets:
+•	Come from populations having a similar distribution — are compared,
+•	Have a same scale and location
+•	Have comparable tail behavior 
+•	Have comparable distributional forms
+•	
